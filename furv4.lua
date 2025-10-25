@@ -687,8 +687,17 @@ end
 
 
 --// Extended ROBLOX tables \\--
-local Instance = setmetatable({ClearChildrenOfClass = function(where,class,recursive) local children = (recursive and where:GetDescendants() or where:GetChildren()) for ,v in next, children do if(v:IsA(class))then v:destroy();end;end;end},{_index = Instance})
---// Require stuff \\--
+local Instance = {}
+Instance.ClearChildrenOfClass = function(where, class, recursive)
+    local children = (recursive and where:GetDescendants() or where:GetChildren())
+    for _, v in next, children do
+        if v:IsA(class) then
+            v:destroy()
+        end
+    end
+end
+setmetatable(Instance, {__index = Instance}) -- Now Instance exists
+		--// Require stuff \\--
 
 
 function CamShakeAll(times,intense,origin)

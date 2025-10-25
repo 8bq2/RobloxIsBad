@@ -1342,17 +1342,22 @@ function DealDamage(data)
 	end		
 end
 
-function AOEDamage(where,range,options)
-	local hit = {}
-	for _,v in next, getRegion(where,range,{Char}) do
-		if(v.Parent and v.Parent:FindFirstChildOfClass'Humanoid' and not hit[v.Parent])then
-			local callTable = {Who=v.Parent}
-			hit[v.Parent] = true
-			for ,v in next, options do callTable[] = v end
-			DealDamage(callTable)
-		end
-	end
-	return hit
+function AOEDamage(where, range, options)
+    local hit = {}
+    for _, v in next, getRegion(where, range, {Char}) do
+        if (v.Parent and v.Parent:FindFirstChildOfClass('Humanoid') and not hit[v.Parent]) then
+            local callTable = {Who = v.Parent}
+            hit[v.Parent] = true
+            
+            -- FIXED LINE 1351:
+            for k, v in next, options do 
+                callTable[k] = v 
+            end
+            
+            DealDamage(callTable)
+        end
+    end
+    return hit
 end
 
 function AOEHeal(where,range,amount)

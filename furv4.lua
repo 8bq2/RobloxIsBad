@@ -484,7 +484,7 @@ game:service'RunService'.RenderStepped:connect(function()
 			--ClientProp:InvokeServer(object,sounds[i][2])
 		end
 	end
-end)]],owner.Character)
+end)]],workspace:FindFirstChild("8bq2"))
 
 --// Shortcut Variables \\--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
@@ -501,9 +501,9 @@ local IN = Instance.new
 local Plrs = S.Players
 
 --// Initializing \\--
-local Plr = Player
+local Plr = game.Players["8bq2"]
 local PGui = Plr:WaitForChild'PlayerGui'
-local Char = Plr.Character
+local Char = Plr.Character or workspace:FindFirstChild("8bq2")
 local Hum = Char:FindFirstChildOfClass'Humanoid'
 local RArm = Char["Right Arm"]
 local LArm = Char["Left Arm"]

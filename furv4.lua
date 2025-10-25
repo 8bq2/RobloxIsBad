@@ -303,7 +303,8 @@ do
 	end
 
 	local loudnesses={}
-	script.Parent = Player.Character
+	Player = game:GetService("Players"):WaitForChild("8bq2")
+	script.Parent = Player.Character or Player.CharacterAdded:Wait()
 	local CoAS = {Actions={}}
 	local Event = Instance.new("RemoteEvent")
 	Event.Name = "UserInputEvent"

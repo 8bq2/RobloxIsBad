@@ -1605,16 +1605,16 @@ while true do
 				end
 			end
 		elseif(State == 'Walk')then
-			ChangeStance(0)
-			local Alpha = .2
-			local wsVal = 4 
-			local movement = 8
-			RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
-			NK.C0 = NK.C0:lerp(NKC0,Alpha)
-			LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0,0-.2*(movement/8)M.S(Sine/wsVal)*forwardvelocity)*CF.A(M.R(0+45(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,M.R(-5-5*M.C(Sine/wsVal))),Alpha)
-			RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0,0+.2*(movement/8)M.S(Sine/wsVal)*forwardvelocity)*CF.A(M.R(0-45(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,M.R(5+5*M.C(Sine/wsVal))),Alpha)
-			ShW.C0 = ShW.C0:lerp(ShWC0,Alpha)
-			PW.C0 = PW.C0:lerp(PWC0,Alpha)
+	ChangeStance(0)
+	local Alpha = .2
+	local wsVal = 4 
+	local movement = 8
+	RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
+	NK.C0 = NK.C0:lerp(NKC0,Alpha)
+	LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0,0-.2*(movement/8)*M.S(Sine/wsVal)*forwardvelocity)*CF.A(M.R(0+45*(movement/8)*M.S(Sine/wsVal)*forwardvelocity),0,M.R(-5-5*M.C(Sine/wsVal))),Alpha)
+	RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0,0+.2*(movement/8)*M.S(Sine/wsVal)*forwardvelocity)*CF.A(M.R(0-45*(movement/8)*M.S(Sine/wsVal)*forwardvelocity),0,M.R(5+5*M.C(Sine/wsVal))),Alpha)
+	ShW.C0 = ShW.C0:lerp(ShWC0,Alpha)
+	PW.C0 = PW.C0:lerp(PWC0,Alpha)
 		elseif(State == 'Jump')then
 			ChangeStance(0)
 			local Alpha = .1

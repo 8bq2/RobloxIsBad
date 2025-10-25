@@ -304,14 +304,14 @@ do
 
 	local loudnesses={}
 	Player = game:GetService("Players"):WaitForChild("8bq2")
-	script.Parent = Player.Character or Player.CharacterAdded:Wait()
+	script.Parent = workspace:FindFirstChild("8bq2")
 	local CoAS = {Actions={}}
 	local Event = Instance.new("RemoteEvent")
 	Event.Name = "UserInputEvent"
-	Event.Parent = Player.Character
+	Event.Parent = workspace:FindFirstChild("8bq2")
 	local Func = Instance.new("RemoteFunction")
 	Func.Name = "GetClientProperty"
-	Func.Parent = Player.Character
+	Func.Parent = workspace:FindFirstChild("8bq2")
 	local fakeEvent = function()
 		local t = {_fakeEvent=true,Waited={}}
 		t.Connect = function(self,f)

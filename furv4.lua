@@ -1350,6 +1350,9 @@ function AOEDamage(where, range, options)
             hit[v.Parent] = true
             
             -- FIXED: Added 'k' variable and fixed the assignment
+
+				print("moved the line down for fixing")
+				
             for k, v in pairs(options) do 
                 callTable[k] = v 
             end

@@ -1349,8 +1349,8 @@ function AOEDamage(where, range, options)
             local callTable = {Who = v.Parent}
             hit[v.Parent] = true
             
-            -- FIXED LINE 1351:
-            for k, v in next, options do 
+            -- FIXED: Added 'k' variable and fixed the assignment
+            for k, v in pairs(options) do 
                 callTable[k] = v 
             end
             
